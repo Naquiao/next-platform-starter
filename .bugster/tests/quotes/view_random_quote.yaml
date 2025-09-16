@@ -1,0 +1,10 @@
+name: View random quote
+page: /quotes
+page_path: app/quotes/random/route.js
+task: Test random quote display functionality
+steps:
+- Navigate to a page with the random quote component
+- Verify a quote is displayed
+- Refresh the page
+- Verify a potentially different quote is displayed
+expected_result: A random quote should be displayed to the user

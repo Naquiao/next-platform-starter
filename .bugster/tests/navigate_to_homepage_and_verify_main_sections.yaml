@@ -1,0 +1,10 @@
+name: Navigate to homepage and verify main sections
+page: /
+page_path: app/page.jsx
+task: Verify homepage loads and displays expected main sections
+steps:
+- Navigate to the homepage
+- Verify header is visible with navigation links
+- Verify main content section is displayed
+- Scroll down and verify footer is visible
+expected_result: Homepage should display header, main content, and footer sections

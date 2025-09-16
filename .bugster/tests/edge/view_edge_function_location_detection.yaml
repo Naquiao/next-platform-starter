@@ -1,0 +1,10 @@
+name: View edge function location detection
+page: /edge
+page_path: app/edge/page.jsx
+task: Test edge function location detection functionality
+steps:
+- Navigate to the edge page
+- Verify location detection message is displayed
+- Check that appropriate content is shown based on detected location
+- Verify explanation of edge functionality is visible
+expected_result: Page should display location-specific content based on edge function

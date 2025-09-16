@@ -1,0 +1,11 @@
+name: Create and customize blob shape
+page: /blobs
+page_path: app/blobs/page.jsx
+task: Test blob shape creation and customization functionality
+steps:
+- Navigate to the blobs page
+- Click on 'New Shape' button
+- Adjust customization options in the editor
+- Verify blob preview updates with changes
+- Save the blob shape
+expected_result: User should be able to create and customize a blob shape successfully

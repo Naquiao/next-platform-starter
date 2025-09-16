@@ -1,0 +1,85 @@
+{
+  "metadata": {
+    "timestamp": 1758052723.5956256,
+    "version": 2,
+    "git": {
+      "branch": "bugster/tests/onboarding-20250916-195840",
+      "commit": "e2df9211387c1713d8ee4e05adb76bde353e41a9"
+    }
+  },
+  "data": {
+    "framework": {
+      "id": "next",
+      "name": "Next.js",
+      "dir_path": "/home/bugsteruser/app/repo/"
+    },
+    "router_type": "app",
+    "stats": {
+      "fileCount": 32,
+      "routeCount": 0,
+      "apiRouteCount": 1,
+      "layoutCount": 1
+    },
+    "layouts": [
+      {
+        "name": "function",
+        "relative_file_path": "app/layout.jsx",
+        "relative_dir_path": "app",
+        "content": "import '../styles/globals.css';\nimport { Footer } from '../components/footer';\nimport { Header } from '../components/header';\n\nexport const metadata = {\n    title: {\n        template: '%s | Netlify',\n        default: 'Netlify Starter'\n    }\n};\n\nexport default function RootLayout({ children }) {\n    return (\n        <html lang=\"en\">\n            <head>\n                <link rel=\"icon\" href=\"/favicon.svg\" sizes=\"any\" />\n            </head>\n            <body className=\"antialiased text-white bg-blue-900\">\n                <div className=\"flex flex-col min-h-screen px-6 bg-noise sm:px-12\">\n                    <div className=\"flex flex-col w-full max-w-5xl mx-auto grow\">\n                        <Header />\n                        <main className=\"grow\">{children}</main>\n                        <Footer />\n                    </div>\n                </div>\n            </body>\n        </html>\n    );\n}\n",
+        "components": [
+          "Header",
+          "Footer"
+        ]
+      }
+    ],
+    "routes": [],
+    "api_routes": [
+      {
+        "routePath": "/quotes/random",
+        "relativeFilePath": "app/quotes/random/route.js",
+        "methods": [
+          "GET"
+        ],
+        "hasValidation": false,
+        "deps": [
+          "NextResponse",
+          "data"
+        ]
+      }
+    ],
+    "all_paths": [
+      "app/blobs/actions.js",
+      "app/blobs/editor.jsx",
+      "app/blobs/generator.js",
+      "app/blobs/list.jsx",
+      "app/blobs/new-shape.jsx",
+      "app/blobs/page.jsx",
+      "app/blobs/renderer.jsx",
+      "app/classics/page.jsx",
+      "app/edge/australia/page.jsx",
+      "app/edge/explainer.jsx",
+      "app/edge/not-australia/page.jsx",
+      "app/edge/page.jsx",
+      "app/image-cdn/image-with-size-overlay.jsx",
+      "app/image-cdn/page.jsx",
+      "app/layout.jsx",
+      "app/page.jsx",
+      "app/quotes/random/route.js",
+      "app/revalidation/page.jsx",
+      "components/alert.jsx",
+      "components/card.jsx",
+      "components/code-block.jsx",
+      "components/context-alert.jsx",
+      "components/feedback-form.jsx",
+      "components/footer.jsx",
+      "components/header.jsx",
+      "components/markdown.jsx",
+      "components/random-quote.jsx",
+      "components/submit-button.jsx",
+      "netlify/edge-functions/rewrite.js",
+      "next.config.js",
+      "postcss.config.js",
+      "utils.js"
+    ]
+  }
+}
