@@ -3,39 +3,87 @@
 @import 'tailwindcss';
 
 @theme {
-    --background-image-noise: linear-gradient(
-            to bottom,
-            color-mix(in oklab, var(--color-neutral-950) 0%, transparent),
-            color-mix(in oklab, var(--color-neutral-950) 100%, transparent)
-        ),
-        url('/images/noise.png');
-    --color-primary: #2bdcd2;
-    --color-primary-content: #171717;
-    --color-secondary: #016968;
+    --color-primary: #2563eb;
+    --color-primary-content: #ffffff;
+    --color-secondary: #64748b;
+    --color-neutral-50: #f9fafb;
+    --color-neutral-100: #f3f4f6;
+    --color-neutral-200: #e5e7eb;
+    --color-neutral-300: #d1d5db;
+    --color-neutral-400: #9ca3af;
+    --color-neutral-500: #6b7280;
+    --color-neutral-600: #4b5563;
+    --color-neutral-700: #374151;
+    --color-neutral-800: #1f2937;
+    --color-neutral-900: #111827;
     --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
         'Noto Color Emoji';
 }
 
 @layer base {
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        @apply bg-white text-neutral-800;
+    }
+
     h1 {
-        @apply text-4xl font-bold tracking-tight sm:text-5xl;
+        @apply text-3xl font-semibold tracking-tight text-neutral-900 mb-4;
     }
 
     h2 {
-        @apply text-2xl font-bold sm:text-3xl;
+        @apply text-2xl font-semibold text-neutral-900 mb-3 mt-8;
     }
 
     h3 {
-        @apply text-xl font-bold;
+        @apply text-xl font-medium text-neutral-900 mb-2 mt-6;
     }
 
-    a:not(.btn) {
-        @apply underline transition hover:opacity-80;
+    h4 {
+        @apply text-lg font-medium text-neutral-800 mb-2 mt-4;
+    }
+
+    p {
+        @apply text-neutral-700 leading-relaxed mb-4;
+    }
+
+    a:not(.btn):not(.nav-link) {
+        @apply text-primary hover:text-primary/80 transition-colors no-underline;
+    }
+
+    ul {
+        @apply space-y-1;
+    }
+
+    li {
+        @apply text-neutral-700;
     }
 
     :not(pre) > code {
-        @apply px-1 py-0.5 font-mono rounded bg-neutral-900 text-yellow-200;
-        font-size: 0.9em;
+        @apply px-2 py-1 font-mono rounded-md bg-neutral-100 text-neutral-800 border;
+        font-size: 0.875em;
+    }
+
+    pre {
+        @apply bg-neutral-50 border rounded-lg p-4 overflow-x-auto;
+    }
+
+    blockquote {
+        @apply border-l-4 border-neutral-200 pl-4 italic text-neutral-600 my-4;
+    }
+
+    table {
+        @apply w-full border-collapse border border-neutral-200 rounded-lg overflow-hidden;
+    }
+
+    th {
+        @apply bg-neutral-50 border border-neutral-200 px-4 py-2 font-medium text-left text-neutral-900;
+    }
+
+    td {
+        @apply border border-neutral-200 px-4 py-2 text-neutral-700;
     }
 }
 
@@ -59,28 +107,133 @@
     }
 
     .btn {
-        @apply inline-flex items-center justify-center gap-2 font-bold text-center no-underline transition-colors cursor-pointer bg-primary text-primary-content;
-        padding: var(--btn-py, 0.875rem) var(--btn-px, 1.25rem);
+        @apply inline-flex items-center justify-center gap-2 font-medium text-center no-underline transition-all duration-200 cursor-pointer;
+        padding: var(--btn-py, 0.75rem) var(--btn-px, 1rem);
         font-size: var(--btn-font-size, 0.875rem);
-        border-radius: var(--btn-border-radius, 0.25rem);
+        border-radius: var(--btn-border-radius, 0.375rem);
 
-        &:hover {
-            @apply bg-primary/85;
+        &.btn-primary {
+            @apply bg-primary text-white hover:bg-primary/90 border border-primary;
+        }
+
+        &.btn-secondary {
+            @apply bg-white text-neutral-700 hover:bg-neutral-50 border border-neutral-300;
+        }
+
+        &.btn-ghost {
+            @apply bg-transparent text-neutral-600 hover:bg-neutral-100 border border-transparent;
         }
 
         &:disabled {
-            @apply cursor-default text-neutral-400 bg-neutral-700;
+            @apply cursor-default text-neutral-400 bg-neutral-100 border-neutral-200;
         }
     }
 
     .btn-lg {
-        --btn-font-size: 1.125rem;
+        --btn-font-size: 1rem;
         --btn-px: 1.5rem;
-        --btn-py: 1.125rem;
+        --btn-py: 0.875rem;
+    }
+
+    .btn-sm {
+        --btn-font-size: 0.875rem;
+        --btn-px: 0.75rem;
+        --btn-py: 0.5rem;
     }
 
     .input {
-        @apply px-4 py-3 text-sm border rounded-sm border-neutral-300 text-neutral-900 focus:border-primary focus:outline-3 focus:outline-primary/30;
+        @apply px-3 py-2 text-sm border rounded-md border-neutral-300 text-neutral-900 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+    }
+
+    /* Notion-style sidebar */
+    .sidebar {
+        @apply w-64 bg-neutral-50 border-r border-neutral-200 h-screen fixed left-0 top-0 overflow-y-auto;
+    }
+
+    .sidebar-item {
+        @apply flex items-center px-3 py-2 text-sm text-neutral-700 hover:bg-neutral-100 rounded-md mx-2 transition-colors duration-150 cursor-pointer;
+    }
+
+    .sidebar-item.active {
+        @apply bg-neutral-100 text-neutral-900;
+    }
+
+    .sidebar-item-icon {
+        @apply w-4 h-4 mr-3 text-neutral-500;
+    }
+
+    /* Content area with sidebar offset */
+    .main-content {
+        @apply ml-64 min-h-screen;
+    }
+
+    /* Notion-style cards */
+    .notion-card {
+        @apply bg-white border border-neutral-200 rounded-lg p-6 hover:shadow-sm transition-shadow duration-200;
+    }
+
+    .notion-card-header {
+        @apply flex items-center mb-4;
+    }
+
+    .notion-card-icon {
+        @apply w-8 h-8 mr-3 text-primary;
+    }
+
+    .notion-card-title {
+        @apply text-lg font-medium text-neutral-900;
+    }
+
+    .notion-card-description {
+        @apply text-neutral-600 text-sm leading-relaxed;
+    }
+
+    /* Code blocks */
+    .code-block {
+        @apply bg-neutral-900 text-neutral-100 rounded-lg p-4 text-sm font-mono overflow-x-auto;
+    }
+
+    /* Info callouts */
+    .callout {
+        @apply border-l-4 p-4 rounded-r-lg mb-4;
+    }
+
+    .callout-info {
+        @apply bg-blue-50 border-blue-400 text-blue-800;
+    }
+
+    .callout-warning {
+        @apply bg-yellow-50 border-yellow-400 text-yellow-800;
+    }
+
+    .callout-success {
+        @apply bg-green-50 border-green-400 text-green-800;
+    }
+
+    .callout-error {
+        @apply bg-red-50 border-red-400 text-red-800;
+    }
+
+    /* Navigation breadcrumb */
+    .breadcrumb {
+        @apply flex items-center space-x-2 text-sm text-neutral-500 mb-6;
+    }
+
+    .breadcrumb-separator {
+        @apply mx-2 text-neutral-400;
+    }
+
+    /* Page header */
+    .page-header {
+        @apply border-b border-neutral-200 pb-6 mb-8;
+    }
+
+    .page-title {
+        @apply text-3xl font-semibold text-neutral-900 mb-2;
+    }
+
+    .page-description {
+        @apply text-lg text-neutral-600;
     }
 
     .diff {

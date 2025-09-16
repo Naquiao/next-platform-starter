@@ -1,0 +1,20 @@
+name: Test Generation Page UI and Navigation
+page: /generation
+page_path: app/generation/page.jsx
+task: Verify the Test Generation page displays correctly and navigation links work
+  properly
+steps:
+- Navigate to the generation page
+- Verify the page title is 'Test Generation'
+- Verify the page description about AI-powered test creation is visible
+- Verify the 'Manual (YAML template)' section is displayed with its template code
+  example
+- Verify the 'Assisted (Claude Code / Cursor)' section is displayed
+- Verify the four cards display correctly with their respective icons and descriptions
+- Click on the 'Back to Home' link
+- Verify redirection to the home page
+- Navigate back to the generation page
+- "Click on the 'Test Management \u2192' link"
+- Verify redirection to the management page
+expected_result: The Test Generation page should display all sections correctly and
+  navigation links should redirect to the proper pages

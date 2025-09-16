@@ -1,9 +1,16 @@
-export function Card({ title, children, className }) {
+export function Card({ title, children, className, icon }) {
     return (
-        <div className={['bg-white rounded-sm text-neutral-600', className].filter(Boolean).join(' ')}>
-            <div className="flex flex-col gap-4 px-6 py-8">
-                {title && <h3 className="text-neutral-900">{title}</h3>}
-                {children}
+        <div className={['bg-white border border-neutral-200 rounded-lg hover:shadow-sm transition-shadow duration-200', className].filter(Boolean).join(' ')}>
+            <div className="p-6">
+                {(title || icon) && (
+                    <div className="notion-card-header">
+                        {icon && <div className="notion-card-icon">{icon}</div>}
+                        {title && <h3 className="notion-card-title">{title}</h3>}
+                    </div>
+                )}
+                <div className="notion-card-description">
+                    {children}
+                </div>
             </div>
         </div>
     );

@@ -1,0 +1,16 @@
+name: Verify Notion cards on homepage have interactive hover effects
+page: HomePage
+page_path: app/page.jsx
+task: Verify that the Notion cards display proper styling including hover effects
+steps:
+- Navigate to the homepage
+- Scroll down to the Quick Start Cards section
+- Verify each card has the 'notion-card' class
+- Verify each card has a title with 'notion-card-title' class
+- Verify each card has a description with 'notion-card-description' class
+- Hover over each card one by one
+- Verify that a shadow appears on each card when hovered (shadow-sm class activates)
+- Click on the 'Start Generating' button in the first card
+- Verify navigation to the '/generation' page
+expected_result: Cards should show a shadow effect when hovered and display proper
+  styling with title, description and icon if available
