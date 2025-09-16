@@ -5,7 +5,7 @@
 # Project Information
 project_name: next-platform-starter
 project_id: next-platform-starter-1758052721
-base_url: "http://localhost:3000"
+base_url: "http://localhost:3001"
 
 # Project Authentication
 # credentials:

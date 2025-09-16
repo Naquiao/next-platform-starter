@@ -1,0 +1,20 @@
+name: Test Management Page Content and Navigation
+page: /management
+page_path: app/management/page.jsx
+task: Verify the Test Management page displays all sections correctly and navigation
+  links work
+steps:
+- Navigate to the Test Management page
+- Verify the page title 'Test Management' is displayed
+- Verify section '2. Test morphology in Bugster' is visible with example code blocks
+- Verify section '3. Editing an existing test' is visible
+- Verify section '4. Deleting tests' is visible
+- Verify section '5. File location and naming conventions' is visible
+- "Click on the '\u2190 Test Generation' link at the bottom of the page"
+- Verify user is redirected to the Generation page
+- Navigate back to the Test Management page
+- "Click on the 'Running Tests \u2192' link at the bottom"
+- Verify user is redirected to the Execution page
+expected_result: The Test Management page should display all sections about test morphology,
+  editing, deleting, and file location, and navigation links to Generation and Execution
+  pages should be functional

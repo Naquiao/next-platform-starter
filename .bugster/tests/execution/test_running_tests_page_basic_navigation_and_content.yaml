@@ -1,0 +1,22 @@
+name: Test Running Tests page basic navigation and content
+page: ExecutionPage
+page_path: app/execution/page.jsx
+task: Verify that the Running Tests page loads correctly and displays all expected
+  sections
+steps:
+- Navigate to the '/execution' page
+- Verify the page title displays 'Running Tests'
+- Verify the 'Basic Test Execution' section is displayed with 4 cards (Single Test,
+  All Tests, Directory Tests, Filtered Tests)
+- Verify the 'Advanced Execution Options' section is displayed with environment configuration,
+  parallel execution, and output options
+- Verify the 'CI/CD Integration' section is displayed with GitHub Actions example
+  and exit codes
+- Verify the 'Debugging Failed Tests' section is displayed with 4 cards (Screenshots,
+  Step-by-Step Logs, Browser Console, Network Requests)
+- Verify the 'Best Practices' section is displayed with 4 cards (Test Isolation, Data
+  Management, Retry Logic, Performance)
+- "Verify the navigation links at the bottom: '\u2190 Test Management' pointing to\
+  \ '/management' and 'Examples \u2192' pointing to '/examples'"
+expected_result: The Running Tests page should display all sections and navigation
+  links correctly

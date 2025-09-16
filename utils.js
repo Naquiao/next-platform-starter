@@ -1,37 +1,44 @@
-import { uniqueNamesGenerator, adjectives, animals, NumberDictionary } from 'unique-names-generator';
-
 /*
-Get the actual size of a resource downloaded by the browser (e.g. an image) in bytes.
-This is supported in recent versions of all major browsers, with some caveats.
-See https://developer.mozilla.org/en-US/docs/Web/API/PerformanceResourceTiming/encodedBodySize
+Utility functions for Bugster documentation site
 */
-export function getResourceSize(url) {
-    const entry = window?.performance?.getEntriesByName(url)?.[0];
-    if (entry) {
-        const size = entry?.encodedBodySize;
-        return size || undefined;
-    } else {
-        return undefined;
-    }
-}
-
-// Note: this only works on the server side
-export function getNetlifyContext() {
-    return process.env.CONTEXT;
-}
 
 export function randomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-const uniqueNamesConfig = {
-    dictionaries: [adjectives, animals],
-    separator: '-',
-    length: 2
-};
-
-export function uniqueName() {
-    return uniqueNamesGenerator(uniqueNamesConfig) + "-" + randomInt(100, 999);
+export function formatDate(date) {
+    return new Intl.DateTimeFormat('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    }).format(new Date(date));
 }
 
-export const uploadDisabled = process.env.NEXT_PUBLIC_DISABLE_UPLOADS?.toLowerCase() === "true";
+export function slugify(text) {
+    return text
+        .toString()
+        .toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w-]+/g, '')
+        .replace(/--+/g, '-')
+        .replace(/^-+/, '')
+        .replace(/-+$/, '');
+}
+
+export function copyToClipboard(text) {
+    if (typeof navigator !== 'undefined' && navigator.clipboard) {
+        return navigator.clipboard.writeText(text);
+    }
+    // Fallback for older browsers
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+        document.execCommand('copy');
+    } catch (err) {
+        console.error('Failed to copy text: ', err);
+    }
+    document.body.removeChild(textArea);
+}

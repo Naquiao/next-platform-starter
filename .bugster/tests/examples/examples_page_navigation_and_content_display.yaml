@@ -1,0 +1,20 @@
+name: Examples page navigation and content display
+page: /examples
+page_path: app/examples/page.jsx
+task: Verify Examples page loads correctly with all sections and navigation links
+steps:
+- Navigate to the Examples page
+- Verify the page title 'Examples' is displayed
+- Verify the 'Common Test Patterns' section is visible
+- Verify there are 4 example cards in the Common Test Patterns section
+- Verify the 'Advanced Scenarios' section is visible with 3 examples
+- Verify the 'Integration Examples' section is visible with Weather widget and Payment
+  examples
+- Verify the 'Framework-Specific Examples' section is visible with 2 cards
+- "Click on the '\u2190 Running Tests' link at the bottom"
+- Verify navigation to /execution page
+- Navigate back to Examples page
+- "Click on the 'API Reference \u2192' link"
+- Verify navigation to /api page
+expected_result: Examples page displays all test pattern examples and navigation links
+  work properly

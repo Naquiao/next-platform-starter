@@ -1,12 +1,12 @@
 import '../styles/globals.css';
-import { Footer } from '../components/footer';
 import { Header } from '../components/header';
 
 export const metadata = {
     title: {
-        template: '%s | Netlify',
-        default: 'Netlify Starter'
-    }
+        template: '%s | Bugster',
+        default: 'Bugster - AI Test Generation Platform'
+    },
+    description: 'Generate, manage, and run automated tests with AI-powered precision. Bugster makes testing simple and comprehensive.'
 };
 
 export default function RootLayout({ children }) {
@@ -15,13 +15,14 @@ export default function RootLayout({ children }) {
             <head>
                 <link rel="icon" href="/favicon.svg" sizes="any" />
             </head>
-            <body className="antialiased text-white bg-blue-900">
-                <div className="flex flex-col min-h-screen px-6 bg-noise sm:px-12">
-                    <div className="flex flex-col w-full max-w-5xl mx-auto grow">
-                        <Header />
-                        <main className="grow">{children}</main>
-                        <Footer />
-                    </div>
+            <body className="antialiased bg-white">
+                <div className="flex min-h-screen">
+                    <Header />
+                    <main className="main-content flex-1">
+                        <div className="max-w-4xl mx-auto px-8 py-8">
+                            {children}
+                        </div>
+                    </main>
                 </div>
             </body>
         </html>

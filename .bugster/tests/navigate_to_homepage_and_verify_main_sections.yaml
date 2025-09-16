@@ -4,7 +4,10 @@ page_path: app/page.jsx
 task: Verify homepage loads and displays expected main sections
 steps:
 - Navigate to the homepage
-- Verify header is visible with navigation links
-- Verify main content section is displayed
-- Scroll down and verify footer is visible
-expected_result: Homepage should display header, main content, and footer sections
+- Verify page header is visible with title 'Generating and managing tests'
+- Verify prose content section with introduction text
+- Verify callout info section with prerequisites list
+- Verify generation guide section with table of test creation methods
+- Scroll down and verify quick start cards section with three cards
+expected_result: Homepage should display page header, prose content, callout section,
+  generation guide, and quick start cards
