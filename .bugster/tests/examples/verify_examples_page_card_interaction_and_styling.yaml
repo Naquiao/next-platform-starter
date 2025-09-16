@@ -1,0 +1,19 @@
+name: Verify Examples page card interaction and styling
+page: /examples
+page_path: app/examples/page.jsx
+task: Test the interaction with cards and verify their updated styling in different
+  sections
+steps:
+- Navigate to the Examples page
+- Verify cards have the new rounded-lg border style
+- Find a card with an icon and verify the icon appears in the notion-card-icon element
+- Verify card titles are displayed with the notion-card-title class
+- Verify card content appears in the notion-card-description class
+- Hover over a card in the Framework-Specific Examples section
+- Verify the hover:shadow-sm effect appears on hover
+- Click on the React Components card
+- Verify the card responds to the click (even if no navigation occurs)
+- Verify all sections (Common Test Patterns, Advanced Scenarios, Integration Examples,
+  Framework-Specific Examples) display the proper card styling
+expected_result: All cards should display proper styling with icons when present,
+  respond to hover with shadow effect, and show content in proper notion-card classes

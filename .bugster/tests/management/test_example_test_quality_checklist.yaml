@@ -1,0 +1,15 @@
+name: Test Example Test Quality Checklist
+page: /management
+page_path: app/management/page.jsx
+task: Verify the Test Quality Checklist is displayed correctly with proper formatting
+steps:
+- Navigate to the Test Management page
+- Locate the section '2. Test morphology in Bugster'
+- Find the Test Quality Checklist in the green success callout box
+- Verify the checklist contains three bullet points in a list format
+- Verify the first bullet point contains the bold text 'One clear task'
+- Verify the second bullet point contains the bold text 'Steps are actionable'
+- Verify the third bullet point contains the bold text 'expected_result is observable'
+- Verify the checklist is styled with proper list-disc and spacing classes
+expected_result: The Test Quality Checklist should be visible with three bullet points
+  about test quality criteria, each properly formatted with bold highlights

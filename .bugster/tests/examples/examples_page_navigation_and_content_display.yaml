@@ -6,15 +6,20 @@ steps:
 - Navigate to the Examples page
 - Verify the page title 'Examples' is displayed
 - Verify the 'Common Test Patterns' section is visible
-- Verify there are 4 example cards in the Common Test Patterns section
+- Verify there are 4 example cards in the Common Test Patterns section with the new
+  styling (rounded-lg, border-neutral-200)
+- Check that cards display icons in the notion-card-icon element when present
+- Verify card titles are displayed in the notion-card-title class
+- Verify card content appears in the notion-card-description class
 - Verify the 'Advanced Scenarios' section is visible with 3 examples
 - Verify the 'Integration Examples' section is visible with Weather widget and Payment
   examples
 - Verify the 'Framework-Specific Examples' section is visible with 2 cards
+- Hover over a card and verify the shadow-sm effect appears
 - "Click on the '\u2190 Running Tests' link at the bottom"
 - Verify navigation to /execution page
 - Navigate back to Examples page
 - "Click on the 'API Reference \u2192' link"
 - Verify navigation to /api page
-expected_result: Examples page displays all test pattern examples and navigation links
-  work properly
+expected_result: Examples page displays all test pattern examples with new card styling
+  including icons, and navigation links work properly

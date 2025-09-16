@@ -1,0 +1,19 @@
+name: Test Card Component Appearance and Icons
+page: /generation
+page_path: app/generation/page.jsx
+task: Verify the card component displays correctly with icons and proper styling
+steps:
+- Navigate to the generation page
+- Locate the 'Assisted (Claude Code / Cursor)' section
+- Verify that each card has an icon displayed next to its title
+- "Verify the AI-powered card displays a '\U0001F916' icon"
+- "Verify the Compliant card displays a '\u2705' icon"
+- "Verify the Fast card displays a '\u26A1' icon"
+- "Verify the Guided card displays a '\U0001F9ED' icon"
+- Verify the card header contains both the icon and title in the notion-card-header
+  class
+- Verify the card content appears in the notion-card-description class
+- Verify cards have white background with a neutral border
+- Hover over a card and verify it shows a shadow effect
+expected_result: Cards should display with icons, proper titles, styling, and hover
+  effects

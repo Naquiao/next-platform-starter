@@ -7,7 +7,9 @@ steps:
 - Navigate to the '/execution' page
 - Verify the page title displays 'Running Tests'
 - Verify the 'Basic Test Execution' section is displayed with 4 cards (Single Test,
-  All Tests, Directory Tests, Filtered Tests)
+  All Tests, Directory Tests, Filtered Tests) with notion-card styling
+- Check that cards have proper hover effects with shadow-sm transition
+- Verify cards with icons display the icons correctly in the notion-card-icon container
 - Verify the 'Advanced Execution Options' section is displayed with environment configuration,
   parallel execution, and output options
 - Verify the 'CI/CD Integration' section is displayed with GitHub Actions example
@@ -18,5 +20,5 @@ steps:
   Management, Retry Logic, Performance)
 - "Verify the navigation links at the bottom: '\u2190 Test Management' pointing to\
   \ '/management' and 'Examples \u2192' pointing to '/examples'"
-expected_result: The Running Tests page should display all sections and navigation
-  links correctly
+expected_result: The Running Tests page should display all sections with proper styling,
+  icon support, and navigation links correctly
