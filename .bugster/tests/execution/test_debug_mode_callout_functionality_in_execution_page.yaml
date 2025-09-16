@@ -1,0 +1,13 @@
+name: Test debug mode callout functionality in Execution page
+page: Execution Page
+page_path: app/execution/page.jsx
+task: Verify the debug mode callout section exists and displays the correct information
+steps:
+- Navigate to the '/execution' page
+- Scroll down to the 'Debugging Failed Tests' section
+- Verify there is a callout element with class 'callout callout-info'
+- Verify the callout contains a strong text element with content 'Debug Mode:'
+- Verify the callout description explains the --debug flag functionality
+- Verify the callout contains a code-block with the command 'bugster run --debug path/to/failing-test.yaml'
+expected_result: The debug mode callout should be visible with the correct title,
+  description and code example

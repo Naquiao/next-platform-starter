@@ -4,13 +4,15 @@ page_path: app/page.jsx
 task: Verify that the Notion cards display proper styling including hover effects
 steps:
 - Navigate to the homepage
-- Scroll down to the Quick Start Cards section
+- Scroll down to the grid of cards at the bottom of the page
 - Verify each card has the 'notion-card' class
-- Verify each card has a title with 'notion-card-title' class
-- Verify each card has a description with 'notion-card-description' class
+- Verify each card has a header with a title using 'notion-card-title' class
+- Verify each card has content with 'notion-card-description' class
 - Hover over each card one by one
-- Verify that a shadow appears on each card when hovered (shadow-sm class activates)
+- Verify that a shadow appears on each card when hovered (hover:shadow-sm class activates)
+- "Verify first card has title '\U0001F680 Quick Start' and a 'Start Generating' button"
 - Click on the 'Start Generating' button in the first card
 - Verify navigation to the '/generation' page
-expected_result: Cards should show a shadow effect when hovered and display proper
-  styling with title, description and icon if available
+expected_result: Cards should show a shadow effect when hovered (hover:shadow-sm class),
+  display proper styling with notion-card class, and include notion-card-title and
+  notion-card-description classes with properly formatted content and button

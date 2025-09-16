@@ -4,10 +4,20 @@ page_path: app/page.jsx
 task: Verify homepage loads and displays expected main sections
 steps:
 - Navigate to the homepage
-- Verify page header is visible with title 'Generating and managing tests'
-- Verify prose content section with introduction text
+- Verify page header is visible with title 'Generating and managing tests' and description
+  'How to create, modify, and remove tests in Bugster'
+- Verify prose content section with introduction text and numbered list of guide topics
 - Verify callout info section with prerequisites list
-- Verify generation guide section with table of test creation methods
-- Scroll down and verify quick start cards section with three cards
-expected_result: Homepage should display page header, prose content, callout section,
-  generation guide, and quick start cards
+- Verify generation guide section with heading '1. Generate tests (3 ways)' and table
+  of test creation methods
+- "Scroll down and verify three notion cards with titles '\U0001F680 Quick Start',\
+  \ '\U0001F4CB Test Management', and '\u25B6\uFE0F Running Tests'"
+- Verify each notion card has a 'notion-card' class and contains a description with
+  the 'notion-card-description' class
+- Hover over a notion card and verify it shows a shadow effect (hover:shadow-sm)
+- Click the 'Start Generating' button on the first card
+- Verify navigation to the '/generation' page
+expected_result: Homepage should display page header with title and description, prose
+  introduction with guide points, prerequisites callout, generation tests section
+  with table, and three notion cards for Quick Start, Test Management, and Running
+  Tests

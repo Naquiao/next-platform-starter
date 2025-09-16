@@ -1,0 +1,22 @@
+name: Verify test generation documentation and methods display correctly on homepage
+page: HomePage
+page_path: app/page.jsx
+task: Verify the new test generation documentation section displays correctly with
+  all its subsections
+steps:
+- Navigate to the homepage
+- Verify the page header with title 'Generating and managing tests'
+- Scroll down to the 'Generate Tests Section'
+- Verify the heading '1. Generate tests (3 ways)' is visible
+- Verify the table with test generation methods is displayed with columns 'If you
+  want to...', 'Use', and 'Why'
+- Verify the table has at least 4 rows including methods for automatic generation,
+  targeted scenarios, specific scenarios, and AI editor
+- Verify the 'Automatic (bulk)' subsection '1.1' is visible with code examples
+- Check that the code block contains CLI commands for bulk generation, page-specific
+  generation, and count-based generation
+- Verify the pros and cons list is displayed below the code block with bullet points
+- Click on the link '#1-generate-tests' in the introduction list
+- Verify the page scrolls to the test generation section
+expected_result: The test generation documentation section should be displayed with
+  proper formatting, including headers, table of methods, code examples, and descriptions
